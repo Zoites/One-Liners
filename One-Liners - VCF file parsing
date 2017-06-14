@@ -1,5 +1,15 @@
-Total number of variants in vcf file
+#Total number of variants in vcf file
 	grep -v "#" filename | wc -l
 		 
-Total number of variants in vcf file that passed filtering
+#Total number of variants in vcf file that passed filtering
 	awk '{if($7=="PASS") print}' filename | wc -l
+
+#Number of unique SNVs across all sample in a Monovar output file
+	cut -f20 MonoVar_output_file.vcf | sed 1,20d | sed 's/[^1,2]//g'  | awk '{ print length }' | sort | wc -l
+	
+#Number of unique SNVs in at least 2 samples within a Monovar output file
+	cut -f20 MonoVar_output_file.vcf   | sed 1,20d | sed 's/[^1,2]//g'  | awk '{ print length }' | sort | awk '$1> 1' | wc -l
+	
+#Number of unique SNVs in at least 3 samples within a Monovar output file
+	cut -f20 MonoVar_output_file.vcf   | sed 1,20d | sed 's/[^1,2,3]//g'  | awk '{ print length }' | sort | awk '$1> 2' | wc -l
+
