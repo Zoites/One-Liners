@@ -1,0 +1,5 @@
+#count number of sequences in a fasta file
+	grep -c "^>" file.fa
+#Sequence length distribution in a Fastq File
+	awk 'NR%4 == 2 {lengths[length($0)]++} END {for (l in lengths) {print l, lengths[l]}}' file.fastq
+	cat file.fastq | awk '{if(NR%4==2) print length($1)}' | sort -n | uniq -c 
