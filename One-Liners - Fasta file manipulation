@@ -1,0 +1,2 @@
+#count number of sequences in a fasta file
+	grep -c "^>" file.fa
