@@ -10,3 +10,12 @@
 
 #number of mapped reads in a bam file
 	samtools idxstats in.bam | awk '{s+=$3} END {print s}'
+
+#convert fasta file to BLAST database
+	formatdb -p F -i fasta-file -n name-of-BLASTdb
+
+#convert SAM file to BAM file 
+	samtools view in.bam > out.sam 
+
+#convert BAM file to SAM file 
+	samtools view in.sam > out.sam 
