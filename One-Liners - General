@@ -6,3 +6,9 @@
 
 #Find difference between 2 files
 	awk 'FNR==NR{f[$1];next}(!($1 in f)) ' file1 file2
+
+#Find pattern and display n lines above pattern (n=10)
+	grep "pattern" filename -B 10 
+
+#Find pattern and display n lines below pattern (n=10)
+	grep "pattern" filename -A 10 
