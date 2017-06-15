@@ -12,3 +12,6 @@
 
 #Find pattern and display n lines below pattern (n=10)
 	grep "pattern" filename -A 10 
+
+#Combine files
+	cat file1 file2 file3 > newfile
