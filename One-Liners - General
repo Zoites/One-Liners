@@ -1,2 +1,5 @@
 #Count lines in multiple files and display lines per file
   grep -c filenames
+
+#Mutation spectrum (base pair change) of SNVs in a BED file
+	cut -f4,5 filename | sort | uniq -c	
