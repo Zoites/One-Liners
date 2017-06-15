@@ -3,3 +3,6 @@
 
 #Mutation spectrum (base pair change) of SNVs in a BED file
 	cut -f4,5 filename | sort | uniq -c	
+
+#Find difference between 2 files
+	awk 'FNR==NR{f[$1];next}(!($1 in f)) ' file1 file2
