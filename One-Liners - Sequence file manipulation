@@ -19,3 +19,16 @@
 
 #convert BAM file to SAM file 
 	samtools view in.sam > out.sam 
+	
+#Extract fasta sequences with IDs in a seperate file
+	perl -ne 'if(/^>(\S+)/){$c=$i{$1}}$c?print:chomp;$i{$_}=1 if @ARGV' ids.file fasta.file
+	
+#Find "." replace with nothing
+	sed  "s/\.//g" file.in >> file.out 
+
+#Find space replace with pipe "|"
+	sed 's/[ \t]/|/g' file.in >> file.out 
+
+#Delete lines containing obsolete
+	sed '/obsolete/d' file.in >> file.out 
+
