@@ -21,4 +21,17 @@
 
 #Replace space in the beginning of line VI text editor
 	%s/^ \+//
+
+#Compare file1 and file2; suppress lines unique to FILE1 
+	comm -1 file1 file2 > file3
+
+#Compare file1 and file2, suppress lines unique to FILE2
+	comm -2 file1 file2 > file3
+
+#Compare file1 and file2, suppress lines that appear in both files
+	comm -3 file1 file2 > file3
+
+#Extract last field per line
+	awk '{ print $NF }' filename
 	
+
