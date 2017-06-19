@@ -15,3 +15,10 @@
 
 #Combine files
 	cat file1 file2 file3 > newfile
+
+#Replace ^M with line break in VI text editor
+	%s/^M/\r/g
+
+#Replace space in the beginning of line VI text editor
+	%s/^ \+//
+	
