@@ -36,3 +36,7 @@
 #Open file in favortie text editor
 #Search with the following string and replace with nothing
 	gi\|[0-9]+\|[A-Z]+\|.+\|.+\[ 
+	
+#Remove empty headers with no sequences in fasta file
+	awk 'BEGIN {RS = ">" ; FS = "\n" ; ORS = ""} $2 {print ">"$0}' input.fasta > output.fasta
+
