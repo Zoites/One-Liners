@@ -36,3 +36,10 @@
 	
 #Mutation spectrum (base Pair change) of SNVs in a BED file
 	cut -f4,5 filename | sort | uniq -c
+
+#Extract the Nth string in a line
+	cut -c Nth	
+	
+#Unzip multiple tar files
+	for file in *.tar.gz; do tar -zxf $file; done
+
