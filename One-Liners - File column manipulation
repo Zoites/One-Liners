@@ -1,5 +1,5 @@
-#Sort by column
-	'sort -n -k 1'
+#Sort by `column`
+	sort -n -k 1'
 
 #Cut out columns 1, 2, 3, 4, and 5
 	cut -f1,2,3,4,5 filename 
