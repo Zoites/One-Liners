@@ -34,4 +34,5 @@
 #Extract last field per line
 	awk '{ print $NF }' filename
 	
-
+#Mutation spectrum (base Pair change) of SNVs in a BED file
+	cut -f4,5 filename | sort | uniq -c
