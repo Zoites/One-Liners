@@ -1,8 +1,8 @@
-#Sort by column
+##Sort by column
 	sort -n -k 1
 
-#Cut out columns 1, 2, 3, 4, and 5
+##Cut out columns 1, 2, 3, 4, and 5
 	cut -f1,2,3,4,5 filename 
  
-#Sort, Uniq, Count by column 3
+##Sort, Uniq, Count by column 3
 	more filename | sort -s -n -k 3 | uniq -f 3 -c 
