@@ -6,3 +6,8 @@
  
 # Sort, Uniq, Count by column 3
 	more filename | sort -s -n -k 3 | uniq -f 3 -c 
+
+# Differences between two columns in 2 files
+	awk 'NR==FNR{c[$4]++;next};c[$4] == 0'	
+	awk -F, 'FILENAME != ARGV[ARGC-1] {keys[$6]; next} !($6 in keys)'
+	awk 'NR == FNR { a[$1,$2] = $0; next }  { delete a[$1, $2] } END { for (i in a) print a[i] }'
