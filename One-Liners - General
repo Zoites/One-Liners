@@ -43,3 +43,15 @@
 #Unzip multiple tar files
 	for file in *.tar.gz; do tar -zxf $file; done
 
+#Extract the 8th line of single file
+	sed '8q;d' filename	
+
+#Extract the 8th line of multiple files	
+	awk 'FNR == 8' *filenames
+	
+#Find 2 patterns in the same file
+	cat filename | grep -e "pattern1"  -e "pattern2"
+	
+#Append output to beginning of file
+	cat <(command) filename >tmp && mv tmp filename
+
